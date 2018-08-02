@@ -1,7 +1,7 @@
 // Inspired from https://github.com/team-innovation/vue-sfc-rollup
 
 // Import vue component
-import component from './<%- componentNamePascal %>.vue'
+import component from '../components/<%- componentNamePascal %>.vue'
 
 // install function executed by Vue.use()
 export function install(Vue) {

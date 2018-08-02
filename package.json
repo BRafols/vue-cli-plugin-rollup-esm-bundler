@@ -1,11 +1,11 @@
 {
-  "name": "vue-cli-plugin-rollup-lib-bundler",
+  "name": "vue-cli-plugin-rollup-esm-bundler",
   "version": "0.2.0",
   "description": "Vue CLI 3.0 plugin with Rollup ESM bundler",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ti-pa-to/vue-cli-plugin-rollup-lib-bundler.git"
+    "url": "git+https://github.com/ti-pa-to/vue-cli-plugin-rollup-esm-bundler.git"
   },
   "keywords": [
     "Vue",
@@ -16,9 +16,9 @@
   "author": "Kemal Yalcinkaya",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ti-pa-to/vue-cli-plugin-rollup-lib-bundler/issues"
+    "url": "https://github.com/ti-pa-to/vue-cli-plugin-rollup-esm-bundler/issues"
   },
-  "homepage": "https://github.com/ti-pa-to/vue-cli-plugin-rollup-lib-bundler#readme",
+  "homepage": "https://github.com/ti-pa-to/vue-cli-plugin-rollup-esm-bundler#readme",
   "dependencies": {
     "chalk": "^2.4.1",
     "node-emoji": "^1.8.1"

@@ -6,7 +6,7 @@ const emoji = require('node-emoji')
 module.exports = (api, options, rootOptions) => {
   console.log(`\n${emoji.get('pizza')}  Thank you for using ${chalk.cyan('Rollup ESM Bundler Plugin')}`)
   console.log(`    For questions, issues and recommendations please visit: `)
-  console.log(`    ${chalk.green('https://github.com/ti-pa-to/vue-cli-plugin-rollup-lib-bundler')}`)
+  console.log(`    ${chalk.green('https://github.com/ti-pa-to/vue-cli-plugin-rollup-esm-bundler')}`)
 
   // Add kebab-case component name to the options (original options are coming from plugin prompts)
   const kebabcase = string =>
