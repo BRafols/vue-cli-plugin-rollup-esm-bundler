@@ -1,13 +1,13 @@
 // Inspired from https://github.com/team-innovation/vue-sfc-rollup
 
 // Import vue component
-import component from '../components/{{componentNameKebab}}.vue'
+import component from './<%- componentNamePascal %>.vue'
 
 // install function executed by Vue.use()
 export function install(Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('{{componentNamePascal}}', component)
+  Vue.component('<%- componentNamePascal %>', component)
 }
 
 // Create module definition for Vue.use()

@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: '{{componentNamePascal}}',
+  name: '<%- componentNamePascal %>',
   data() {
     return {
       counter: 5,
