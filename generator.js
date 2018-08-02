@@ -28,6 +28,12 @@ module.exports = (api, options, rootOptions) => {
 
   // Install Rollup and supporting packages and add rollup scripts to build
   api.extendPackage({
+    main: `dist/${kebabCaseName}.umd.js`,
+    module: `dist/${kebabCaseName}.esm.js`,
+    unpkg: `dist/${kebabCaseName}.min.js`,
+    browser: {
+      './sfc': `src/${kebabCaseName}.vue`
+    },
     devDependencies: {
       rollup: '*',
       'rollup-plugin-buble': '*',
