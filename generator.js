@@ -8,6 +8,13 @@ module.exports = (api, options, rootOptions) => {
   console.log(`    For questions, issues and recommendations please visit: `)
   console.log(`    ${chalk.green('https://github.com/ti-pa-to/vue-cli-plugin-rollup-esm-bundler')}`)
 
+  // Make sure the input comes in PascalCase and if not, this helper will convert whatever comes to PascalCase
+  const pascalify = str => {
+    const camelized = str.replace(/-([a-z])/g, c => c[1].toUpperCase())
+    return camelized.charAt(0).toUpperCase() + camelized.slice(1)
+  }
+  options.componentNamePascal = pascalify(options.componentNamePascal)
+
   // Add kebab-case component name to the options (original options are coming from plugin prompts)
   const kebabcase = string =>
     string
