@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-rollup-esm-bundler",
-  "version": "0.2.3-0",
+  "version": "0.2.3",
   "description": "Vue CLI 3.0 plugin with Rollup ESM bundler",
   "main": "index.js",
   "repository": {
