@@ -8,6 +8,11 @@ module.exports = (api, options, rootOptions) => {
   console.log(`    For questions, issues and recommendations please visit: `)
   console.log(`    ${chalk.green('https://github.com/ti-pa-to/vue-cli-plugin-rollup-esm-bundler')}`)
 
+  console.log('I am here')
+  console.log(options)
+  console.log(rootOptions)
+  console.log('---------')
+
   // Add kebab-case component name to the options (original options are coming from plugin prompts)
   const kebabcase = string =>
     string
