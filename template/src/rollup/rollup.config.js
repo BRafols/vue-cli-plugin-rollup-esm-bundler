@@ -1,15 +1,14 @@
+// Inspired from https://github.com/team-innovation/vue-sfc-rollup
+
 // rollup.config.js
 import vue from 'rollup-plugin-vue'
 import buble from 'rollup-plugin-buble'
 import uglify from 'rollup-plugin-uglify-es'
-import minimist from 'minimist'
-
-const argv = minimist(process.argv.slice(2))
 
 const config = {
-  input: 'src/index.js',
+  input: 'src/rollup/bundler.js',
   output: {
-    name: 'RollupFloatbox',
+    name: '{{componentNamePascal}}',
     exports: 'named'
   },
   plugins: [
@@ -21,8 +20,7 @@ const config = {
   ]
 }
 
-// Only minify browser (iife) version
-if (argv.format === 'iife') {
+if (process.argv.indexOf('iife') !== -1) {
   config.plugins.push(uglify())
 }
 

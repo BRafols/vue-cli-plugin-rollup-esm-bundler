@@ -1,11 +1,13 @@
+// Inspired from https://github.com/team-innovation/vue-sfc-rollup
+
 // Import vue component
-import component from './rollup-floatbox.vue'
+import component from '../components/{{componentNameKebab}}.vue'
 
 // install function executed by Vue.use()
 export function install(Vue) {
   if (install.installed) return
   install.installed = true
-  Vue.component('RollupFloatbox', component)
+  Vue.component('{{componentNamePascal}}', component)
 }
 
 // Create module definition for Vue.use()
