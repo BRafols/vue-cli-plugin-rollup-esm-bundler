@@ -45,7 +45,8 @@ module.exports = (api, options, rootOptions) => {
       rollup: '*',
       'rollup-plugin-buble': '*',
       'rollup-plugin-uglify-es': '*',
-      'rollup-plugin-vue': '*'
+      'rollup-plugin-vue': '*',
+      'rollup-plugin-analyzer': '*'
     },
     scripts: {
       rollup: 'npm run rollup:unpkg & npm run rollup:es & npm run rollup:umd',
