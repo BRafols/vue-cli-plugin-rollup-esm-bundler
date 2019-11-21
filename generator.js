@@ -42,17 +42,19 @@ module.exports = (api, options, rootOptions) => {
       './sfc': `src/${kebabCaseName}.vue`
     },
     devDependencies: {
-      rollup: '*',
-      'rollup-plugin-buble': '*',
-      'rollup-plugin-uglify-es': '*',
-      'rollup-plugin-vue': '*',
-      'rollup-plugin-analyzer': '*'
+      'rollup': "^1.12.1",
+      'rollup-plugin-buble': "^0.19.6",
+      'rollup-plugin-commonjs': "^10.0.0",
+      'rollup-plugin-replace': "^2.2.0",
+      'rollup-plugin-terser': "^4.0.4",
+      'rollup-plugin-vue': "5.1.1",
     },
     scripts: {
       rollup: 'npm run rollup:unpkg & npm run rollup:es & npm run rollup:umd',
-      'rollup:umd': `rollup --config src/rollup/rollup.config.js --format umd --file dist/${kebabCaseName}.umd.js`,
-      'rollup:es': `rollup --config src/rollup/rollup.config.js --format es --file dist/${kebabCaseName}.esm.js`,
-      'rollup:unpkg': `rollup --config src/rollup/rollup.config.js --format iife --file dist/${kebabCaseName}.min.js`
+      'rollup': "cross-env NODE_ENV=production rollup --config src/rollup/rollup.config.js",
+      'rollup:ssr': "cross-env NODE_ENV=production rollup --config src/rollup/rollup.config.js --format cjs",
+      'rollup:es': "cross-env NODE_ENV=production rollup --config src/rollup/rollup.config.js --format es",
+      'rollup:unpkg': "cross-env NODE_ENV=production rollup --config src/rollup/rollup.config.js --format iife",
     }
   })
 

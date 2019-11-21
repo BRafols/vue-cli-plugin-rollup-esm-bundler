@@ -4,7 +4,12 @@
 import component from '../components/<%- componentNamePascal %>.vue'
 
 // install function executed by Vue.use()
-export function install(Vue) {
+export function install(Vue, { store }) {
+
+  if (!store) {
+    throw new Exception('Please provide a store')
+  }
+
   if (install.installed) return
   install.installed = true
   Vue.component('<%- componentNamePascal %>', component)
