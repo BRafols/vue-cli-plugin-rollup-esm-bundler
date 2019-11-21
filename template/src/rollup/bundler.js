@@ -12,21 +12,21 @@ export function install(Vue, { store , router, axios }) {
    * Validation
    */
   if (!store) {
-    throw new Exception('Please provide a store')
+    throw 'Please provide a store'
   }
 
   if (!router) {
-    throw new Exception('Please provide a router instance')
+    throw 'Please provide a router instance'
   }
 
   if (!axios) {
-    throw new Exception('Please provide a axios instance')
+    throw 'Please provide a axios instance'
   }
 
   if (install.installed) return
   install.installed = true
 
-  options.store.registerModule('module_name', createModule())
+  store.registerModule('module_name', createModule())
   router.addRoutes(createRoutes())
   Vue.prototype.$axios = axios
   Vue.component('<%- componentNamePascal %>', component)

@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 
-export default createModule = () => {
+const createModule = () => {
     return {
         namespaced: true,
         state: {

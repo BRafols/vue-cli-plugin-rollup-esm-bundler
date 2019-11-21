@@ -1,39 +1,36 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" dark>
     <v-navigation-drawer
       v-model="drawer"
-      app
       clipped
+      fixed
+      app
     >
       <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-settings</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Settings</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list-tile @click="console.log('dashboard')">
+          <v-list-tile-action>
+            <v-icon>dashboard</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Dashboard</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="console.log('settings')">
+          <v-list-tile-action>
+            <v-icon>settings</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Settings</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-
-    <v-app-bar
-      app
-      clipped-left
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+    <v-toolbar app fixed clipped-left>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
-    </v-app-bar>
-
+    </v-toolbar>
     <v-content>
+      <v-container fluid fill-height>
         <v-btn color="success" :to="{
             name: 'bundle.name.foo'
         }">FOO</v-btn>
@@ -43,61 +40,41 @@
         }">BAR</v-btn>
 
         <router-view />
-
-      <v-container
-        class="fill-height"
-        fluid
-      >
-        <v-row
-          align="center"
-          justify="center"
-        >
-          <v-col class="shrink">
+        <v-layout justify-center align-center>
+          <v-flex shrink>
             <v-tooltip right>
               <template v-slot:activator="{ on }">
-                <v-btn
-                  :href="source"
-                  icon
-                  large
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-code-tags</v-icon>
+                <v-btn :href="source" icon large target="_blank" v-on="on">
+                  <v-icon large>code</v-icon>
                 </v-btn>
               </template>
               <span>Source</span>
             </v-tooltip>
             <v-tooltip right>
               <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/bXNzZL"
-                  target="_blank"
-                  v-on="on"
-                >
+                <v-btn icon large href="https://codepen.io/johnjleider/pen/qxQWda" target="_blank" v-on="on">
                   <v-icon large>mdi-codepen</v-icon>
                 </v-btn>
               </template>
               <span>Codepen</span>
             </v-tooltip>
-          </v-col>
-        </v-row>
+          </v-flex>
+        </v-layout>
       </v-container>
     </v-content>
-
-    <v-footer app>
-      <span>&copy; 2019</span>
+    <v-footer app fixed>
+      <span>&copy; 2017</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-export default {
-
-}
+  export default {
+    data: () => ({
+      drawer: null
+    }),
+    props: {
+      source: String
+    }
+  }
 </script>
-
-<style>
-
-</style>
