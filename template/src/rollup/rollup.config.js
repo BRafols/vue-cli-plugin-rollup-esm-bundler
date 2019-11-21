@@ -40,10 +40,11 @@ const baseConfig = {
 const external = [
   //'text-mask-addons',
   //'vue-text-mask',
-  //'axios',
-  //'vuetify',
-  //'vuex',
-  //'vue2-google-maps'
+  // 'vue2-google-maps'
+  'axios',
+  'vuetify',
+  'vuex',
+  'vue-router'
 ];
 const globals = {
   // Provide global variable names to replace your external imports

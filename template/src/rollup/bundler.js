@@ -1,17 +1,34 @@
 // Inspired from https://github.com/team-innovation/vue-sfc-rollup
 
 // Import vue component
+import createRoutes from './../routes/index'
+import { createModule } from './../store/index'
 import component from '../components/<%- componentNamePascal %>.vue'
 
 // install function executed by Vue.use()
-export function install(Vue, { store }) {
-
+export function install(Vue, { store , router, axios }) {
+  
+  /**
+   * Validation
+   */
   if (!store) {
     throw new Exception('Please provide a store')
   }
 
+  if (!router) {
+    throw new Exception('Please provide a router instance')
+  }
+
+  if (!axios) {
+    throw new Exception('Please provide a axios instance')
+  }
+
   if (install.installed) return
   install.installed = true
+
+  options.store.registerModule('module_name', createModule())
+  router.addRoutes(createRoutes())
+  Vue.prototype.$axios = axios
   Vue.component('<%- componentNamePascal %>', component)
 }
 

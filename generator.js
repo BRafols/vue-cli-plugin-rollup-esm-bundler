@@ -41,13 +41,19 @@ module.exports = (api, options, rootOptions) => {
     browser: {
       './sfc': `src/${kebabCaseName}.vue`
     },
+    dependencies: {
+      'axios': '^0.19.0',
+      'vuetify': '^1.5.20',
+      'vuex': '^3.1.1',
+      'vue-router': '^3.1.1'
+    },
     devDependencies: {
-      'rollup': "^1.12.1",
-      'rollup-plugin-buble': "^0.19.6",
-      'rollup-plugin-commonjs': "^10.0.0",
-      'rollup-plugin-replace': "^2.2.0",
-      'rollup-plugin-terser': "^4.0.4",
-      'rollup-plugin-vue': "5.1.1",
+      'rollup': '^1.12.1',
+      'rollup-plugin-buble': '^0.19.6',
+      'rollup-plugin-commonjs': '^10.0.0',
+      'rollup-plugin-replace': '^2.2.0',
+      'rollup-plugin-terser': '^4.0.4',
+      'rollup-plugin-vue': '5.1.1',
     },
     scripts: {
       rollup: 'npm run rollup:unpkg & npm run rollup:es & npm run rollup:umd',

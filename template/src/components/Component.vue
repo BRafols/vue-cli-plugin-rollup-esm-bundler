@@ -1,9 +1,9 @@
 <template>
   <div class="component">
     <p>The counter is set to <b>{{counter}}</b>.</p>
-    <button @click="counter += 1">Click +1</button>
-    <button @click="counter -= 1">Click -1</button>
-    <button @click="counter = initCounter">Reset</button>
+    <button @click="increment">Click +1</button>
+    <button @click="decrement">Click -1</button>
+    <button @click="reset">Reset</button>
   </div>
 </template>
 
@@ -14,6 +14,17 @@ export default {
     return {
       counter: 5,
       initCounter: 5
+    }
+  },
+  methods: {
+    increment() {
+      this.$store.dispatch('module_name/INCREMENT')
+    },
+    decrement() {
+      this.$store.dispatch('module_name/DECREMENT')
+    },
+    reset() {
+      this.$store.dispatch('module_name/RESET')
     }
   }
 }
